@@ -5,9 +5,10 @@ export default function LoginPage() {
     const domain = process.env.NEXT_PUBLIC_AUTH0_DOMAIN;
     const clientId = process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID;
     const redirectUri = process.env.NEXT_PUBLIC_REDIRECT_URI;
+    const audience = process.env.NEXT_PUBLIC_AUTH0_AUDIENCE;
 
     // OAuth 2.0 login redirect without OpenID
-    window.location.href = `https://${domain}/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=read:name`;
+    window.location.href = `https://${domain}/authorize?response_type=code&client_id=${clientId}&redirect_uri=${redirectUri}&scope=read:name&audience=${audience}`;
   };
 
   return (
